@@ -7,7 +7,6 @@ import br.com.bonnasys.app.rest.response.VaccineResponse;
 import br.com.bonnasys.domain.model.Vaccine;
 import br.com.bonnasys.domain.usecase.VaccineFacade;
 import br.com.bonnasys.domain.usecase.create.CreateVaccineCommand;
-import io.quarkus.arc.All;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.core.Response;
 import lombok.AllArgsConstructor;

@@ -6,7 +6,6 @@ import lombok.Setter;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
-import java.util.UUID;
 
 @Getter
 @Setter
