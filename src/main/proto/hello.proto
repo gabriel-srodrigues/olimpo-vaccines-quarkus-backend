@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.com.bonnasys";
+option java_outer_classname = "HelloGrpcProto";
+
+package hello;
+
+service HelloGrpc {
+//  rpc NOME_DO_METODO (PARAMETROS_DO_METODO) returns (RETORNO_DO_METODO)
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+  string name = 1;
+  string lastname = 2;
+}
+
+message HelloReply {
+  string message = 1;
+}

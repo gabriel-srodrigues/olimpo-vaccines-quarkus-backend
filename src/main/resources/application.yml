@@ -1,0 +1,11 @@
+quarkus:
+  datasource:
+    username: root
+    password: root
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/vaccines
+  liquibase:
+    migrate-at-start: true
+    change-log: liquibase/master.yaml
+  swagger-ui:
+    path: /swagger
