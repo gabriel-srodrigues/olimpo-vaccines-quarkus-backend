@@ -9,3 +9,23 @@ quarkus:
     change-log: liquibase/master.yaml
   swagger-ui:
     path: /swagger
+
+mp:
+  messaging:
+    incoming:
+      create-vaccines:
+        connector: smallrye-rabbitmq
+        queue: vaccines.create.queue
+        declare: false
+      vaccinate-patient:
+        connector: smallrye-rabbitmq
+        queue: patient.vaccinate.queue
+        declare: false
+      notification:
+        connector: smallrye-rabbitmq
+        queue: notification
+
+rabbitmq-host: localhost
+rabbitmq-port: 5672
+rabbitmq-username: vaccines
+rabbitmq-password: 123456

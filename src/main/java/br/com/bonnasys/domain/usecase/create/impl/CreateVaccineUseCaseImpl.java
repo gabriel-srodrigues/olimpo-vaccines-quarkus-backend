@@ -7,7 +7,9 @@ import br.com.bonnasys.domain.usecase.create.CreateVaccineUseCase;
 import jakarta.inject.Singleton;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Singleton
 @AllArgsConstructor
 public class CreateVaccineUseCaseImpl implements CreateVaccineUseCase {
@@ -16,6 +18,7 @@ public class CreateVaccineUseCaseImpl implements CreateVaccineUseCase {
     @Override
     @Transactional
     public Vaccine execute(CreateVaccineCommand command) {
+        log.info("[execute]: criando registro no banco de dados: {}", command);
         Vaccine vaccine = Vaccine.newVaccine(command.name(), command.producer());
         vaccineRepository.persist(vaccine);
         return vaccine;
